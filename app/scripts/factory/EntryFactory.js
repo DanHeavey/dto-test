@@ -1,4 +1,4 @@
-define(['dto/EntryDTO','jquery'], function (EntryDTO,jq) {
+define(['dto/EntryDTO'], function (EntryDTO) {
     'use strict';
 
     var EntryFactory;
@@ -7,7 +7,14 @@ define(['dto/EntryDTO','jquery'], function (EntryDTO,jq) {
     {
         getEntryDTO: function(data)
         {
-
+            var entry = new EntryDTO();
+            entry.id = data.entry.id;
+            entry.link = data.entry.link;
+            entry.summary = data.entry.summary;
+            entry.updated = data.entry.updated;
+            return entry;
         }
     };
+
+    return EntryFactory;
 });

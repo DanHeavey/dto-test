@@ -13,11 +13,15 @@ requirejs.config({
     }
 });
 
-require(["dto/EntryDTO","loader/Loader"], function(EntryDTO, Loader) {
+require(["dto/EntryDTO","loader/Loader", "factory/EntryFactory"], function(EntryDTO, Loader, EntryFactory) {
     var test = new EntryDTO();
     console.log(test);
     console.log(test.toString());
-    var data = Loader.getXML('http://localhost:63342/dto-test/app/data/entry.xml');
-    console.log(data);
-
+    function dataReady( json )
+    {
+        console.log( json );
+        var dto = EntryFactory.getEntryDTO(json);
+        console.log(dto);
+    }
+    Loader.getXML('http://localhost:63342/dto-test/app/data/entry.xml', dataReady );
 });

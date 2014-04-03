@@ -10,7 +10,7 @@ define([], function () {
             links:null,
             toString:function()
             {
-                return '[object DeviceDTO]';
+                return '[object EntryDTO]';
             }
         };
     };
