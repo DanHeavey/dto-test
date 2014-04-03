@@ -14,12 +14,12 @@ requirejs.config({
 });
 
 require(["dto/EntryDTO","loader/Loader", "factory/EntryFactory"], function(EntryDTO, Loader, EntryFactory) {
-    var test = new EntryDTO();
-    console.log(test);
-    console.log(test.toString());
+//    var test = new EntryDTO();
+//    console.log(test);
+//    console.log(test.toString());
     function dataReady( json )
     {
-        console.log( json );
+//        console.log( json );
         var dto = EntryFactory.getEntryDTO(json);
         console.log(dto);
     }
