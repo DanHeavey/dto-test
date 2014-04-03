@@ -7,17 +7,17 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        app: '../app',
+
         "components": "../bower_components",
-        "jquery": "../bower_components/jquery/dist/jquery"
+        "jquery": "../../bower_components/jquery/dist/jquery"
     }
 });
 
-require(["dto/EntryDTO","loader/loader"], function(EntryDTO, Loader) {
+require(["dto/EntryDTO","loader/Loader"], function(EntryDTO, Loader) {
     var test = new EntryDTO();
     console.log(test);
     console.log(test.toString());
+    var data = Loader.getXML('http://localhost:63342/dto-test/app/data/entry.xml');
+    console.log(data);
 
-    var xmlLoader = new Loader();
-    xmlLoader.getXML();
 });
