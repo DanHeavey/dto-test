@@ -14,7 +14,7 @@ require(["dto/EntryDTO","loader/Loader", "factory/EntryFactory"], function(Entry
 //    console.log(test.toString());
     function dataReady( json )
     {
-//        console.log( json );
+        console.log( json );
         var dto = EntryFactory.getEntryDTO(json);
         console.log(dto);
     }

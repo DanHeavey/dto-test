@@ -1,4 +1,4 @@
-define(['dto/FeedDTO'], function (EntryDTO) {
+define(['dto/FeedDTO'], function (FeedDTO) {
     'use strict';
 
     var FeedFactory;

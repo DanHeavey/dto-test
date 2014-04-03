@@ -87,7 +87,9 @@ module.exports = function(grunt) {
           keepalive: true,
           port: 9090,
           base: 'app',
-          hostname:'localhost'
+          hostname:'localhost',
+          livereload:true
+
         }
       },
       production: {

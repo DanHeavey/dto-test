@@ -1,4 +1,4 @@
-define(['jquery','xml2json'], function ($, xml2json) {
+define(['jquery','xml2json','dto/ErrorDTO'], function ($, xml2json, ErrorDTO) {
     'use strict';
     var XMLLoader;
 
@@ -6,7 +6,6 @@ define(['jquery','xml2json'], function ($, xml2json) {
     {
         getXML:function( path, callback )
         {
-         //   console.log("test");
             $.ajax({
                 type: "GET",
                 url: path,
@@ -16,7 +15,11 @@ define(['jquery','xml2json'], function ($, xml2json) {
                     callback(data);
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                   // alert("some error");
+                   var error = new ErrorDTO();
+                   error.XMLHttpRequest = XMLHttpRequest;
+                   error.textStatus = textStatus;
+                   error.errorThrown = errorThrown;
+                   callback(error);
                    console.log("error [" + XMLHttpRequest + textStatus + errorThrown +"]");
                 }
             });

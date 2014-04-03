@@ -1,4 +1,4 @@
-define(['dto/EntryDTO'], function (EntryDTO) {
+define(['dto/EntryDTO', 'dto/ErrorDTO'], function (EntryDTO, ErrorDTO) {
     'use strict';
 
     var EntryFactory;
@@ -7,12 +7,22 @@ define(['dto/EntryDTO'], function (EntryDTO) {
     {
         getEntryDTO: function(data)
         {
-            var entry = new EntryDTO();
-            entry.id = data.entry.id;
-            entry.link = data.entry.link;
-            entry.summary = data.entry.summary;
-            entry.updated = data.entry.updated;
-            return entry;
+            try
+            {
+                var entry = new EntryDTO();
+                entry.id = data.entry.id;
+                entry.link = data.entry.link;
+                entry.summary = data.entry.summary;
+                entry.updated = data.entry.updated;
+                return entry;
+            }
+            catch ( error )
+            {
+                console.log(error);
+                console.log(data);
+                return null;
+            }
+
         }
     };
 
