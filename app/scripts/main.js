@@ -18,5 +18,5 @@ require(["dto/EntryDTO","loader/Loader", "factory/EntryFactory"], function(Entry
         var dto = EntryFactory.getEntryDTO(json);
         console.log(dto);
     }
-    Loader.getXML('http://localhost:63342/dto-test/app/data/entry.xml', dataReady );
+    Loader.getXML('data/entry.xml', dataReady );
 });

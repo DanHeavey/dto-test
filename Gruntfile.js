@@ -84,7 +84,10 @@ module.exports = function(grunt) {
     connect: {
       development: {
         options: {
-          keepalive: true
+          keepalive: true,
+          port: 9090,
+          base: 'app',
+          hostname:'localhost'
         }
       },
       production: {
