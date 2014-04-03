@@ -1,2 +1,2 @@
-# Simple Data Transfur Object example
+# Simple Data Transfer Object example
 
