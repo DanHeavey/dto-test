@@ -9,7 +9,7 @@ define([], function () {
         errorThrown:null,
         toString:function()
         {
-            return '[object ErrorDTO]';
+            return '[object ErrorDTO] ' + 'XMLHttpRequest:' + this.XMLHttpRequest + ' textStatus:' + this.textStatus + ' errorThrown:' + this.errorThrown;
         }
         };
     };
