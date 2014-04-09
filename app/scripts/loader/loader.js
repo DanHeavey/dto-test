@@ -1,4 +1,4 @@
-define(['jquery','xml2json','dto/ErrorDTO'], function ($, xml2json, ErrorDTO) {
+define(['jquery','vendor/xml2json','dto/ErrorDTO'], function ($, xml2json, ErrorDTO) {
     'use strict';
     var XMLLoader;
 

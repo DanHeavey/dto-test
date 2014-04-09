@@ -75,7 +75,7 @@ module.exports = function(grunt) {
       compile: {
         options: {
           name: 'config',
-          mainConfigFile: 'app/config.js',
+          mainConfigFile: 'app/scripts/config.js',
           out: '<%= concat.dist.dest %>',
           optimize: 'none'
         }
